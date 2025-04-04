@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'Lettering';
+    src: url('fonts/HappyAutumnRegular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+.BarraDeArriba {
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto negro para contraste */
+    padding: 15px 20px;
+    display: flex;
+    text-align: left;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra en la parte inferior */
+    font-family: 'Lettering';
+    position: fixed; /* Fija la barra arriba */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que esté por encima del contenido */
+    margin-bottom: 10px;
+}
+
+.BarraDeArriba h1 {
+    margin: 0;
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.Descripcion {
+    margin-top: 100px;    
+    margin-bottom: 20px;  
+    margin-left: 25px;    
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to top, #00c6ff, #0072ff, #ea00ff); 
+    color: white; 
+    width: 40%;
+    padding: 20px; 
+    border-radius: 10px; 
+
+    display: flex;  /* Activamos Flexbox */
+    justify-content: space-between;  /* Alinea los elementos a los extremos */
+    align-items: center;  /* Centra verticalmente los elementos */
+    margin-left: 550px;
+}
+
+.Descripcion img {
+    width: 90%;  /* Aseguramos que la imagen tenga un tamaño adecuado */
+    max-width: 100%; /* Evita que la imagen se desborde */
+}
+
+.Descripcion .IconoControl {
+    width: 20%;
+}
+
+.Descripcion .Texto {
+    width: 80%;
+}
+
+
+
+
+
+/* Menú de navegación */
+.Menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.Menu li {
+    display: inline;
+}
+
+.Menu a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-family: 'Lettering';
+    transition: color 0.3s ease;
+}
+
+.Menu a:hover {
+    color: #0072ff; /* Color azul al pasar el cursor */
+}
+
+/* Catálogo */
+.Catalogo {
+    margin: 50px 25px;
+    padding: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #0072ff, #00c6ff); /* Fondo degradado azul */
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra elegante */
+    text-align: center;
+}
+
+.Catalogo h2 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.Catalogo ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0;
+    line-height: 1.8;
+}
+
+.BotonExplorar {
+    background-color: #ffffff;
+    color: rgb(204, 0, 255);
+    font-size: 16px;
+    padding: 10px 20px;
+    border: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.BotonExplorar:hover {
+    background-color: #a600cc; /* Cambia a un morado oscuro al pasar el cursor */
+    color: rgb(255, 255, 255);
+}
+
+
+
+
+/* Formulario de contacto */
+.Contacto {
+    margin: 50px 25px;
+    padding: 20px;
+    background: linear-gradient(to left, #ea00ff, #0072ff); /* Fondo degradado morado-azul */
+    color: white;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Contacto form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.Contacto input {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.Contacto button {
+    background-color: #00c6ff;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Contacto button:hover {
+    background-color: #0072ff; /* Azul más oscuro al pasar el cursor */
+}
+
+/* Preguntas frecuentes (FAQ) */
+.FAQ {
+    margin: 50px 25px;
+    padding: 20px;
+    background: #f0f0f0; /* Fondo gris claro */
+    color: black;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.FAQ h3 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #0072ff; /* Azul del tema */
+}
+
+.FAQ p {
+    margin: 5px 0;
+    line-height: 1.6;
+    font-size: 16px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Videojuegos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Buscar Videojuegos</h1>
+    <input type="text" id="query" placeholder="Buscar...">
+    <button onclick="searchGames()">Buscar</button>
+    <div id="results"></div>
+
+    <script>
+        const API_KEY = "a5b51ff4e5734318bddeceba4a63c55e"; // Reemplaza con tu clave de API de RAWG
+
+        async function searchGames() {
+            const query = document.getElementById("query").value.trim();
+            if (!query) {
+                alert("Por favor, ingresa un término de búsqueda.");
+                return;
+            }
+
+            try {
+                const response = await fetch(`https://api.rawg.io/api/games?key=${API_KEY}&search=${encodeURIComponent(query)}`);
+                if (!response.ok) throw new Error("Error en la respuesta del servidor");
+
+                const data = await response.json();
+                const resultsDiv = document.getElementById("results");
+                resultsDiv.innerHTML = "";
+
+                if (!data.results || data.results.length === 0) {
+                    resultsDiv.innerHTML = "<p>No se encontraron videojuegos.</p>";
+                    return;
+                }
+
+                data.results.forEach(game => {
+                    const gameElement = document.createElement("div");
+                    gameElement.innerHTML = `
+                        <h3 class='Nombre'>${game.name}</h3>
+                        <img src="${game.background_image}" alt="${game.name}" width="200">
+                        <p>Fecha de lanzamiento: ${game.released}</p>
+                        <p>Rating: ${game.rating}</p>
+                    `;
+                    resultsDiv.appendChild(gameElement);
+                });
+
+            } catch (error) {
+                console.error("Error al obtener los datos:", error);
+                document.getElementById("results").innerHTML = "<p>Ocurrió un error al buscar los videojuegos.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
